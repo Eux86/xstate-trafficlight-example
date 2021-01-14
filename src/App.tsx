@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { TrafficLightControlled } from './traffic-light-controlled';
+import { WalkSignal } from './walk-signal';
 
 function App() {
   return (

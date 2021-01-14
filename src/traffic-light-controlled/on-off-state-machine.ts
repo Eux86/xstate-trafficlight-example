@@ -1,25 +1,21 @@
 import { assign, MachineConfig, StateSchema } from 'xstate';
+import { IMachineContext } from './traffic-light-machine';
 
 
-export interface IOnOffMachineContext {
-  counter: number,
-  max: number,
-}
-
-export interface IOnOffMachineSchema extends StateSchema<IOnOffMachineContext> {
+export interface IOnOffMachineSchema extends StateSchema<IMachineContext> {
   states: {
-    lightOn: StateSchema<IOnOffMachineContext>;
-    lightOff: StateSchema<IOnOffMachineContext>;
-    end: StateSchema<IOnOffMachineContext>;
+    lightOn: StateSchema<IMachineContext>;
+    lightOff: StateSchema<IMachineContext>;
+    end: StateSchema<IMachineContext>;
   };
 }
 
-export const onOffMachine: MachineConfig<IOnOffMachineContext, IOnOffMachineSchema, any> = {
+export const onOffMachine: MachineConfig<IMachineContext, IOnOffMachineSchema, any> = {
   initial: 'lightOn',
   states: {
     lightOn: {
       after: {
-        1000: [
+        500: [
           {
             target: 'lightOff',
             actions: assign({ counter: (context) => context.counter + 1 }),
@@ -34,7 +30,7 @@ export const onOffMachine: MachineConfig<IOnOffMachineContext, IOnOffMachineSche
     },
     lightOff: {
       after: {
-        1000: 'lightOn',
+        500: 'lightOn',
       },
     },
     end: {

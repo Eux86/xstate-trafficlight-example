@@ -11,11 +11,11 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
+  transform: translate(-95%, -50%) scale(0.8);
   z-index: 100;
 }
 
-.light {
+.traffic-lights .light {
   border-top: 0.8em solid black;
   border-radius: 50%;
   background: rgb(2, 26, 26);
@@ -24,7 +24,7 @@ body {
   margin: 20px auto;
 }
 
-.shadow {
+.traffic-lights .shadow {
   position: absolute;
   top: 0;
   left: 0;
@@ -34,31 +34,18 @@ body {
   border-radius: 30px 0px 0px 30px;
 }
 
-.red {
+.traffic-lights .red {
   background: #c0392b;
 }
 
-.amber {
+.traffic-lights .amber {
   background: #fbc00c;
 }
 
-.green {
+.traffic-lights .green {
   background: #1abc9c;
 }
 
-/*
-.container{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%) scale(0.8);
-  width:500px;
-  height:500px;
-  border-radius:50%;
-  background:#F25E6E;
-  background:#54606E;
-}
-*/
 
 .traffic-lights::before {
   content: '';

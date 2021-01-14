@@ -1,0 +1,7 @@
+.walk-button {
+  position: absolute;
+  transform: translate(0%, 800%);
+  border-radius: 30px;
+  padding: 9px;
+  background-color: #c1ddc1;
+}
