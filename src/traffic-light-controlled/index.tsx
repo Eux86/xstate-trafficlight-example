@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMachine } from '@xstate/react'
-import { trafficlightMachine } from './state-machine';
+import { trafficlightMachine } from './traffic-light-machine';
 import { TrafficLight } from '../traffic-light';
 
 export const TrafficLightControlled: React.FunctionComponent = () => {
@@ -9,7 +9,7 @@ export const TrafficLightControlled: React.FunctionComponent = () => {
   return (
     <TrafficLight
       red={state.matches('red')}
-      yellow={state.matches('yellow')}
+      yellow={state.matches('yellow.lightOn')}
       green={state.matches('green')}
     />
   )
